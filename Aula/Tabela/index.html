@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tabela</title>
+        <link rel="shortcut icon" href="../imagens/imag_html.jpg" type="image/x-icon">
+    </head>
+    <body>
+        <table border="1">
+            <caption>Tabela 1: Uma tabela com letras</caption>
+            <tr>
+                <th scope="col">Cabeçalho 1</th> 
+                <th scope="col">Cabeçalho 2</th>
+                <th scope="col">Cabeçalho 3</th>
+            </tr>
+            <tr>
+                <td>A - Memória Ram</td>
+                <td>B - Memória Ram</td>
+                <td>C - Memória Ram</td>
+            </tr>
+            <tr>
+                <td>D - Memória Ram</td>
+                <td>E - Memória Ram</td>
+                <td>F - Memória Ram</td>
+            </tr>
+        </table>
+        <br>
+        <table border="1">
+            <caption>Tabela 2: Uma tabela com letras</caption>
+
+            <tr>
+                <td>A </td><td colspan="2">B </td>
+            </tr>
+            <tr>
+                <td rowspan="2">C </td><td colspan="2">D </td>
+            </tr>
+            <tr>
+                <td>E </td><td>F</td>
+            </tr>
+
+            <tr>
+                <td colspan="3">G</td> <!-- colspan é para complementar a coluna ex: junta uma celuna em duas colunas-->
+            </tr>
+        </table>
+        <br>
+        <table border="1">
+            <caption>Tabela 3: Tabela de Vendas</caption>
+            <thead> <!-- Cabechalo da tabela -->
+                <tr>
+                    <th>A</th><th>B</th><th>C</th>
+                </tr>
+            </thead>
+            <tbody> <!-- Corpo da tabela -->
+                <tr>
+                    <td>Vendedor</td><td>Mês</td><td>Venda</td>
+                </tr>
+                <tr>
+                    <td>Luan</td><td>Setembro</td><td>1000</td>
+                </tr>
+                <tr>
+                    <td>Andrezza</td><td>Setembro</td><td>2000</td>
+                </tr>
+                <tr>
+                    <td>Alícia</td><td>Fevereiro</td><td>3000</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">Total de vendas:</td><td>6000</td>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+</html>

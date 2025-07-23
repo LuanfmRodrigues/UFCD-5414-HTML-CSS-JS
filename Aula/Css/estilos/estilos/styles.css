@@ -1,0 +1,375 @@
+@font-face {
+  font-family: 'Open Sans';
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/open-sans@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/open-sans@latest/latin-400-normal.woff) format('woff');
+  /*
+    Valores entre 100 - 900
+    400 - corresponde ao "peso normal"
+    700 - corresponde ao que nós chamamos de bold
+    normal | bold | bolder | lighter | numero | initial | inherit
+  */
+  font-weight: 400;
+  /*
+    valores possíveis
+    normal  - apresenta o texto normalmente (o valor por omissão)
+    italic  - apresenta o texto em itálico
+    oblique - muito similar o itálico, mas menos suportado pelos browsers
+  */
+  font-style: normal;
+  /* diz ao browser para mostrar o texto com uma fonte genérica, temporariamente, enquanto a fonte personalizada está a ser carregada */
+  font-display: swap;
+}
+ 
+@import url('https://fonts.googleapis.com/css?family=Lora:400,700&display=swap');
+
+/* seletor de tipo */
+a {
+    color: green;
+}
+
+/* seletor por id*/
+#posts {
+    background-color: blueviolet;
+}
+
+/* seletor por classe */
+.intro {
+    background-color: aquamarine;
+}
+
+/* seletor universal */
+* {
+    font-size: 20px;
+}
+
+/* seletores de atributos
+
+    [atributo] - Elementos que possuem o atributo
+    [atributo = valor] - Elementos com atributo igual a um valor específico
+    [atributo ~= valor] - Atributo que contém o valor como palavra isolada
+    [atributo |= valor] - Atributo que começa por “value” e pode ser seguido -
+    [atributo ^= valor] - Atributo cujo valor começa por uma string
+    [atributo $= valor] - o atributo termina com o valor
+    [atributo *= valor] - o atributo contém o valor (nem que seja parcialmente)
+
+*/
+[class] {
+    color: blue;
+}
+
+[class="intro"] {
+    font-style: italic;
+}
+
+/* class="menu" class="menu algo" */
+[class~="menu"]{
+    background-color: lightgray;
+}
+
+/* pt-PT ou pt-BR */
+[lang|="pt"]{
+    direction: ltr;
+}
+
+/* <a href="newsletter.html"> */
+[href^="news"]{
+    text-decoration: underline;
+}
+
+/* selectores compontos 
+    Uma sequência de seletores que representam uma relação entre vários elementos ou seletores
+*/
+button.primary {
+    background-color: blue;
+    color: white;
+}
+
+section.highlights.posts {
+    background-color: #f0f0f0 !important;
+}
+
+/* seletores combinatórios 
+    Descendant combinator ( )
+    Child combinator(>)
+    Next-sibling (+)
+    Subsequent-siblings combinator (~)
+*/
+
+/* Descented Combinator */
+aside a {
+    color: red;
+    text-decoration: none;
+}
+
+/* Child Combinator(>) */
+aside > a {
+    color: green;
+}
+
+/* Next-sibling (+) */
+.intro + p{
+    color: red;
+}
+
+/* Subsequent-siblings Combinator */
+.selected ~li {
+    background-color: yellow;
+}
+
+/* Selecionar tudo que esteja dentro do header ( > * ) */
+
+/* Seletores agrupados ( , )*/
+header > *, main article, #article p{
+
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+/*  Cores
+
+    Hexadecimal:    #RRGGBB -> R - Representa a presenca da cor RED, G - Representa presenca da cor GREEN, B - Representa presenca da com blue.  Valor de cada par de cor vai de 00 a FF
+    
+    RGB:            rgb(RR,GG,BB) -> Cada cor primaria estar compriendida entre o valor 0 a 255 - 0% e 100%
+
+    RGBA:           rgba(RR,GG,BB,A) -> Aplha - opacidade - varia entre 0 - 1. em que o 0 é mais opaco e 1 é menos opaco 
+
+*/
+
+header h1 {
+    color: green;
+    background-color: red; /* rgb(255, 0, 0) -> rgb(100%, 0%, 0%) */
+}
+
+/* Fontes - Font Family
+    Existem 2 tipos de font family
+    . Generic family -> um grupo de tipos de letra visualmente similares (sans-serif, serif, monospace)
+    . font family -> tipos de letra especificos (Timen New Roman)
+*/
+
+header h1 {
+
+    font-family:"Times New Roman" ;
+}
+.menu ul li {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular';
+}
+
+/*
+colocado no topo!!
+*/
+/* @font-face {
+  font-family: 'Open Sans';
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/open-sans@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/open-sans@latest/latin-400-normal.woff) format('woff');
+} */
+ 
+body {
+    font-family: 'Open Sans', sans-serif;
+    /*
+        Definição de tamanho de letra
+        Pixels
+        Em -> numero de pixeis / valor base de pixeis = em -> 40px / 16px = 2.5em
+        vw (viewport width) - largura da janela
+            1 vw -> 1% da largura da janela do browser
+            Exemplo: se o ecrã tiver 1000px de largura, 1vw -> 10px
+            TEM PROBLEMA: Em ecrãs grandes, o tipo de letra pode ficar MUITO grande,
+                          em ecrãs pequenos, o tipo de letra pode ficar MUITO pequeno
+                          clamp(valor_minimo, valor_ideal, valor_maximo)
+    */
+    font-size: 24px;
+}
+ 
+header h1, header h2 {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 2.5em;
+}
+ 
+aside {
+    font-size: 0.5vw; /* vai ocupar 0.5% da largura do ecrã 1200px = 6px | 600px = 3 px */
+    /* font-size: clamp(7px, 0.5vw, 12px); */
+}
+/* 
+    Text-decoration ------------------------------------------------------------------------
+
+    underline    - coloca o sublinhado inferior num elemento
+    none         - Remove todos o sublinhado do elemento podendo ser superior ou inferior
+    overline     - coloca o sublinhado no superio num elemento
+    line-through - coloca uma linha no ntexto
+
+    pode ser dividido em::after
+    Text-decoration-line   - serve para definir a decoração de texto (none, underline, overline, line-through, overline underline)
+    Text-decoration-color  - serve para definir a cor da linha
+    Text-decoration-style  - serve para definir o estilo da linha ( solid, double, dotted, dash, wavy)
+    Text-decoration-thickness - a espessura da linha
+    */
+a {
+    /*text-decoration: none;*/
+    text-decoration-line: underline;
+    
+}
+
+.intro {
+    text-decoration: underline;
+    text-decoration-color:red ;
+    Text-decoration-thickness: 5px;
+}
+
+h2 {
+    text-decoration: overline;
+    text-decoration-color:blue ;
+    text-decoration-style: double;
+    Text-decoration-thickness:10px;
+}
+
+aside ul li {
+    text-decoration: line-through;
+    text-decoration-color:green ;
+    text-decoration-style: dotted;
+    Text-decoration-thickness: 2.5px;
+}
+
+h1 {
+    
+    text-decoration-color:purple ;
+    text-decoration-style: wavy ;
+    Text-decoration-thickness:5px;
+}
+
+/*
+    Text-align
+    center   - Centralizar o texto todo espaço do elemento HTML
+    left     - Alinha o texto a esquerda todo espaço do elemento HTML
+    rigth    - Alinhar o texto a direita todo espaço do elemento HTML
+    justify  - Tenta Preencher todo espaço do elemento HTML
+*/
+
+h1, h2 {
+    text-align: center;
+}
+
+aside {
+    text-align: right;
+}
+
+/*
+    Text-transformation
+    uppercase    -  transforma todo o texto em maiuculas 
+    lowercase    -  transforma todo o texto e minusculas
+    capitalize   -  transforma cada primeira letra de cada palavra em maisculas
+
+*/
+
+h1 {
+    text-transform: uppercase;
+
+}
+
+h2 {
+    text-transform: capitalize;
+}
+
+button {
+    text-transform: lowercase;
+}
+
+/*
+    Text Indent
+    Indetar (Recuar) do texto da primerira linha de um paragrafo
+
+*/
+
+article {
+    text-indent: 0.75cm;
+}
+
+/*
+    Box Model ----------------------------------------------------------------------------------------
+    
+    1) Todos os elementos de uma pagina sao RETANGULARES
+    2) Todos os elementos podem ter uma BORDA (LIMITE)
+    3) Existe em todos os elementos um espaço entre o seu conteudo e essa borda -- PADDING
+    4) Existe em todos os elementos um espaço entre esse elemento e o ELEMENTO SEGUINTE - MARGIN 
+
+*/
+/*
+
+    Width e Height
+
+    Nos podemos utilizar as propiedades width e height para mudar o tamanho da area do conteudo:
+    - Os valores podem ser um compirmento, porcentagem ou auto (o browser calcula as dimensoes automaticamentes)
+    - O valor por omissão e o auto.
+
+*/
+
+section {
+
+    width: auto;
+    height: 50px;
+}
+
+/*
+    Box_sizing
+
+    Permite-nos mudar o comportamento do weidht e height, utilizando a propriedade box-sizing
+    - content-box: as propiedades width e height referem-se APENAS a area de conteudo (valor por omissao)
+    - border-box: as popiedades width e height incluem na sua definicao o padding e a border
+*/
+
+section {
+    box-sizing: border-box;
+    height: 50px;
+}
+
+/*
+    Minima e maxima 
+    - quando o widht/height é calculado dependendo de alguma coisa (ex: o tamanho do elemente pai ou do seu propiao conteudo).
+        podemos definir o valor maximo e meninmo para essas propriedades. Usando: valor min-widht, max-widht, min-height, max-height
+    - Os valores podem ser um comprimento, porcentagem ou auto ( obrowser calcula as dimensoes automaticamente). 
+
+*/
+section {
+    /* 50% do tamanho do seu elemento-pai, no entanto indepentenmente do tamanho do conteudo maximo é 40 em */
+    height: auto ;
+    min-height: 100%;
+}
+
+/*
+    Margin  e Padding
+
+    - Podemos usar as ppropriedades margin e padding para alterar o valor desta no box-model
+    padding: 20px;
+    margin: 1em;
+    
+    - Isto na realiadde é um atalho para cada uma das suas quatro propiedades:
+    padding-top, padding-right, padding-bottom, padding-left.
+    margin-top, margin-right, margin-bottom, margin
+
+    margiin-left: 1em;
+    margin-right: 2em;
+    padding-top: 100px;
+
+    Os atalhos para a margin e padding sao os seguintes:
+    - um valor: altera os quatro lados de uma so vez
+    - Dois valores: o primeiro valor é para bottom/top e o segundo valor para left/right
+    - Tres valores: o  primeiro valor é para top, segundo para left/right e terceiro para o bottom
+    - qutro valores: top, right,  bottom e left.
+ */
+
+ body {
+
+    margin: 0 auto; /* Top e bottom 0px, left  e right automatic*/
+ }
+
+ .menu {
+    padding: 1em; /* padding de 1 em a toda a volta*/
+ }
+
+ body > nav li {
+    margin: 1.5em 1em 3em; /*  1.5em top, 1em left/right e 3em bottom*/
+ }
+
+/*
+    Bordes (bordas ou limites)
+
+    
+*/
+ 

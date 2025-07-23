@@ -1,0 +1,58 @@
+h1, h2 {
+    color: goldenrod;
+}
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: clamp(0.5rem, 3vw, 1.5rem)
+
+}
+#formacao {
+    background-color: rgba(218, 165, 32, 0.436);
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+#Experiência {
+    background-color: rgba(218, 165, 32, 0.436);
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+img {
+    border-radius: 50% ;
+    width: 3%;
+    margin-left: 2%;
+    margin-top: 1%;
+    
+}
+article > pre > span{
+    
+    color: blue;
+}
+article > pre {
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 10px;
+}
+
+h3{
+    font-style: italic;
+}
+
+a{
+    text-decoration: underline;
+}
+
+.extra {
+    background-color: lightcyan;
+    text-decoration:solid ;
+    
+    
+}
+
+.destaque{
+    background-color: lightcyan;
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}

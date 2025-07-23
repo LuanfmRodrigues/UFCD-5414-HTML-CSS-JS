@@ -1,0 +1,51 @@
+body {
+    background-color: lightblue;
+}
+h1 {
+    color: #f25;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+img[alt] {
+    border: 1px solid black;
+}
+.txt1 > p {
+    background-color: rgba(255, 255, 0, 0.2);
+}
+.plorem {
+    background-color: rgba(255, 255, 0, 0.2);
+    font-size: 14px;
+}
+
+.lorem {
+    font-family: 'Courier New', Courier, monospace;
+
+}
+.lorem > h2{
+    color: rgb(255, 0, 0);
+}
+
+.lorem > h3 {
+    text-decoration: none;
+}
+
+.intro {
+    color: green;
+}
+
+#AT4 {
+    font-size: 18px;
+}
+
+.lorem2 > #AT4, .intro {
+    background-color: blueviolet;
+}
+
+.span {
+    color: red;
+    font-size: 18px;
+}
+
+.mark {
+    background-color: rgba(157, 221, 29, 0.947);
+}

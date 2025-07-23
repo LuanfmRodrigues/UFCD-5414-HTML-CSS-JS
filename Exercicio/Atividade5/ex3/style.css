@@ -1,0 +1,40 @@
+img {
+    border-radius: 50% ;
+    width: 2%;
+}
+h1,h2 {
+    color: goldenrod;
+}
+
+#Experiência {
+    background-color: rgba(116, 116, 226, 0.564);
+}
+#formacao{
+    background-color: rgba(160, 99, 55, 0.501);
+}
+h1{
+
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 25px;
+}
+p {
+    font-size: 15px;
+}
+body {
+    font-family: Verdana, sans-serif;
+}
+em {
+    font-style: italic;
+}
+a{
+    text-decoration: underline;
+}
+section > ol {
+    font-style: italic;
+}
+article > pre > span {
+    font-weight: bolder;
+}

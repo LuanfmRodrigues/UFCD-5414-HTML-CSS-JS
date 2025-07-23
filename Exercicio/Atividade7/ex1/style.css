@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'Open Sans';
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/open-sans@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/open-sans@latest/latin-400-normal.woff) format('woff');
+font-weight: 400;
+font-display: swap;
+font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Lora:400,700&display=swap');
+body{
+    font-family: 'Open Sans';
+}
+
+h1 {
+    color: goldenrod;
+}
+
+section {
+    background-color: aqua;
+}
+
+main > section > ol > li {
+    font-style: italic;
+}
+
+a {
+    text-decoration: overline;
+}
+
+#H {
+    text-decoration: line-through;
+}
+
+.p {
+    
+    text-decoration: underline overline;
+}
+
+.destaque {
+    text-decoration: underline overline;
+    text-decoration-color:chartreuse ;
+    text-decoration-style: wavy ;
+    Text-decoration-thickness:5px;
+}
+
+footer {
+    box-sizing: border-box;
+    margin: 50 auto;
+    padding: 1em
+    
+    
+}
+
+.tre {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+    <link rel="shortcut icon" href="../imagens/imag_html.jpg" type="image/x-icon">
+</head>
+<body>
+    <main>
+        <h1>Formulario</h1>
+        <form action="save.php" method="post" enctype="multipart/form-data">
+            <!-- enctyp=" multipart/form-data"   é para eniar ficheiro, para mais de um ficheiro tem que colocar no input file, multiplo e mudar a
+            o method post -->
+            <fieldset >
+                <legend>Dados pessoais</legend>
+
+                <label for="data">Data nascimento: </label>
+                <input type="date" id="data" value="2020-12-21" name="nascimento" > 
+                <!-- disabled é para desabilitar o campo e fica fixo ja o que ta escrito -->
+                <br><br>
+    
+                <label for="telefon">Telefone: </label>
+                <input type="number" id="telefon" value="961624758" name="Telefone" readonly> 
+                <!-- readonly deixa uma informacao fixa -->
+                <br><br>
+                <label for="number">Numero: </label>
+                <input type="number" id="number" value="100" min="5" max="100" step="5" name="Numero">
+                <!-- step para o numero andar em 5 em 5 por exemplo -->
+                <br><br>
+    
+                <label for="nome">Nome: </label>
+                <input type="text" id="nome" name="nome" placeholder="Escreva seu nome" required> 
+                <!-- required siguinifica que esse campo é obrigatorio!-->
+                <!-- placeholder é para deixar uma informacao no campo -->
+    
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="password" value="coisasecenas" > 
+
+            </fieldset>
+            <br><br>
+
+            <fieldset>
+
+                <label for="cor">Cor</label>
+                <input type="color" id="cor" value="#336699" name="cor">
+                <br><br>
+    
+                <input type="checkbox" id="bike" value="Bicicleta" name="bike"><label for="bike">Bicicleta</label>
+                <input type="checkbox" id="carro" value="Carro" name="Carro"><label for="carro">Carro</label>
+                <br><br>
+    
+                <input type="radio" name="genero" id="rbFeminino" value="Feminino" checked> <label for="rbFeminino">Feminino</label>
+                <input type="radio" name="genero" id="rbMasculino" value="Masculino"><label for="rbMasculino">Masculino</label>
+                <br><br>
+
+                <select name="comidas">
+                    <optgroup label="frutas">
+                        <option value="laranja">Laranja</option>
+                        <option value="banana" selected >Banana</option>
+                        <!-- selected ja deixa auto escolhido a opcão-->
+                        <option value="maca">Maçã</option>
+    
+                    </optgroup>
+                    <optgroup label="verduras">
+                        <option value="alface">Alface</option>
+                        <option value="batata">Batata</option>
+                        <option value="pipini">Pipino</option>
+                    </optgroup>
+                </select>
+                <br><br>
+    
+                <input name="fruit" list="hobbies" value="Crossfit">
+                <datalist id="hobbies">
+                    <option >Futebol</option>
+                    <option >Correr</option>
+                    <option selected>Crossfit</option>
+                    <option >Funcional</option>
+    
+                </datalist>
+                
+            </fieldset>    
+                <br><br>
+
+
+
+            <textarea name="comentario" rows="5" cols="60">
+                
+                
+                Santa Cruz FC
+            </textarea>
+
+
+            <input type="file" name="ficheiro" multiple>
+            <!--<input type="submit" value="Confirmar"> -->
+            <button formaction="login.php" formmethod="get" type="submit" formenctype="multipart/form-data">Enviar</button>
+            <!-- Abordagem correta de enviar e completa onde utiliza os atributos do formulario -->
+            <button formaction="register.php" formmethod="post" type="submit"> Registro</button>
+
+            
+            
+
+        </form>
+    </main>
+</body>
+</html>

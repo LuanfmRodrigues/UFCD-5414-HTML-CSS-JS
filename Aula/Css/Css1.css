@@ -1,0 +1,20 @@
+/*comentario*/
+p{ /* Seletor P -> Paragrafo. todos os paragrafos vao receber essa cor (Tudo o que esta antes da chaveta de abertura)*/
+
+    color: blue;/* Regra: propiedade (O que esta antes dos dois ponto ) e valor (o que esta depois do dois pontos) */
+}
+
+/*
+    1) O Seletor universal (*).
+    2) Seletores de tip ( que selecionam por elementos HTML).
+    3) Seletores de atributos (selecionam por um dado atributo do HTML).
+    4) Seletor de class (.) e o seletor de id (#)
+    5) Seletor de Psudo-classe(:)
+    6) Seletor de Pseudo-ELementos (::)
+    7) Seletor de grupos (,) - Reutila propiedades
+    8) Seletores de Combinação ( , > , + , ~ ) - Seletores mais complexos e elaborados
+
+*/
+a{/* Seletor tipo*/
+ border: red;
+}

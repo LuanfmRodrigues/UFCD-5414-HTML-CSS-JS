@@ -1,0 +1,646 @@
+@font-face {
+  font-family: 'Open Sans';
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/open-sans@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/open-sans@latest/latin-400-normal.woff) format('woff');
+  /*
+    Valores entre 100 - 900
+    400 - corresponde ao "peso normal"
+    700 - corresponde ao que nós chamamos de bold
+    normal | bold | bolder | lighter | numero | initial | inherit
+  */
+  font-weight: 400; 
+  /*
+    valores possíveis
+    normal  - apresenta o texto normalmente (o valor por omissão)
+    italic  - apresenta o texto em itálico
+    oblique - muito similar o itálico, mas menos suportado pelos browsers
+  */
+  font-style: normal;
+  /* diz ao browser para mostrar o texto com uma fonte genérica, temporariamente, enquanto a fonte personalizada está a ser carregada */
+  font-display: swap;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Lora:400,700&display=swap');
+
+/* seletor de tipo */
+a {
+    color: green;
+}
+
+/* seletor por id*/
+#posts {
+    background-color: blueviolet;
+}
+
+/* seletor por classe */
+.intro {
+    background-color: aquamarine;
+}
+
+/* seletor universal */
+* {
+    font-size: 20px;
+}
+
+/* seletores de atributos
+    [atributo] - Elementos que possuem o atributo
+    [atributo = valor] - Elementos com atributo igual a um valor específico
+    [atributo ~= valor] - Atributo que contém o valor como palavra isolada
+    [atributo |= valor] - Atributo que começa por “value” e pode ser seguido -
+    [atributo ^= valor] - Atributo cujo valor começa por uma string
+    [atributo $= valor] - o atributo termina com o valor
+    [atributo *= valor] - o atributo contém o valor (nem que seja parcialmente)
+*/
+[class] {
+    color: blue;
+}
+
+[class="intro"] {
+    font-style: italic;
+}
+
+/* class="menu" class="menu algo" */
+[class~="menu"]{
+    background-color: lightgray;
+}
+
+/* pt-PT ou pt-BR */
+[lang|="pt"]{
+    direction: ltr;
+}
+
+/* <a href="newsletter.html"> */
+[href^="news"]{
+    text-decoration: underline;
+}
+
+/* selectores compontos 
+    Uma sequência de seletores que representam uma relação entre vários elementos ou seletores
+*/
+button.primary {
+    background-color: blue;
+    color: white;
+}
+
+section.highlights.posts {
+    background-color: #f0f0f0 !important;
+}
+
+/* seletores combinatórios 
+    Descendant combinator ( )
+    Child combinator(>)
+    Next-sibling (+)
+    Subsequent-siblings combinator (~)
+*/
+/* Descendant combinator ( ) */
+aside a {
+    color: red;
+    text-decoration: none;
+}
+
+/* Child combinator(>) */
+aside > a {
+    color: green;
+}
+
+/* Next-sibling (+) */
+.intro + p {
+    color: red;
+}
+
+/* Subsequent-siblings combinator */
+.selected ~ li {
+    background-color: yellow;
+}
+
+/* seletores agrupados , */
+header > *, main article, #articles p {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* CORES 
+    Nome descritivo
+    Hexadecimal:    #RRGGBB             (cada par de cor primária no hexadecimal vai 00 a FF)
+    RGB:            rgb(RR, GG, BB)     (cada cor primária está compreendida entre o valor 0 e 255 - 0% e 100%)
+    RGBA:           rgba(RR, GG, BB, A) (Alpha - opacidade- varia entre 0 e 1. Em que 0 é mais opaco e 1 é menos opaco)
+*/
+header h1 {
+    color: #3a6b9f;
+    background-color: rgba(100%, 0%, 0%, 0.75); /*rgb(255, 0, 0) rgb(100%, 0%, 0%);*/
+}
+
+/* FONTES - Font Family 
+    Existem 2 tipo de Font Families
+    . generic family    - um grupo de tipos de letra visualmente similares (sans-serif, serif, monospace)
+    . font family       - tipos de letra especificos (Timen New Roman)
+*/
+header h1 {
+    font-family: "Times New Roman", Times, serif;
+}
+
+header h2 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.menu ul li {
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+/*
+colocado no topo!!
+*/
+/* @font-face {
+  font-family: 'Open Sans';
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/open-sans@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/open-sans@latest/latin-400-normal.woff) format('woff');
+} */
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    /*
+        Definição de tamanho de letra
+        Pixels
+        Em -> numero de pixeis / valor base de pixeis = em -> 40px / 16px = 2.5em
+        vw (viewport width) - largura da janela
+            1 vw -> 1% da largura da janela do browser
+            Exemplo: se o ecrã tiver 1000px de largura, 1vw -> 10px
+            TEM PROBLEMA: Em ecrãs grandes, o tipo de letra pode ficar MUITO grande,
+                          em ecrãs pequenos, o tipo de letra pode ficar MUITO pequeno
+                          clamp(valor_minimo, valor_ideal, valor_maximo)
+    */
+    font-size: 24px;
+}
+
+header h1, header h2 {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 2.5em;
+}
+
+aside {
+    font-size: 0.5vw; /* vai ocupar 0.5% da largura do ecrã 1200px = 6px | 600px = 3 px */
+    /* font-size: clamp(7px, 0.5vw, 12px); */
+}
+
+/* Text-decoration 
+    underline       - coloca um sublinhado inferior num elemento
+    none            - remove todos os sublinhados (inferior ou superior) de um elemento
+    overline        - coloca um sublinhado superior num elemento 
+    line-through    - coloca uma linha a rasurar 
+
+    Pode ser divido em:
+    text-decoration-line        - serve para definir a decoração do texto (none, underline, overline, line-through, underline overline)
+    text-decoration-color       - serve para definir a cor da linha
+    text-decoration-style       - serve para definir o estilo da linha (solid, double, dotted, dashed, wavy)
+    text-decoration-thickness   - a espessura da linha
+*/
+a {
+   /* text-decoration: none; */
+    text-decoration-line: none;
+}
+
+.intro {
+    /* text-decoration: underline red 5px; */
+    text-decoration-line: underline;
+    text-decoration-color:red;
+    text-decoration-thickness: 5px;
+
+}
+
+h2 {
+    /* text-decoration: overline blue double 10px; */
+    text-decoration-line: overline;
+    text-decoration-color:blue;
+    text-decoration-style: double;
+    text-decoration-thickness: 10px;
+}
+
+aside ul li {
+    /* text-decoration: line-through green dotted 2.5px; */
+    text-decoration-line: line-through;
+    text-decoration-color:green;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 2.5px;
+}
+
+h1 {
+    /* text-decoration: underline overline purple wavy 5px; */
+    text-decoration-line: underline overline;
+    text-decoration-color:purple;
+    text-decoration-style: wavy;
+    text-decoration-thickness: 5px;
+}
+
+/*
+    Text Align
+    center  - centrar o texto no elemento HTML
+    left    - alinhar o texto à esquerda no elemento HTML (valor por omissão)
+    right   - alinhar o texto à direita no elemento HTML
+    justify - Tenta preencher todo o espaço do elemento HTML
+*/
+h1, h2 {
+    text-align: center;
+}
+
+aside {
+    text-align: right;
+}
+
+/*
+    Text Transformation
+    uppercase   - transforma todo o texto em maiúsculas
+    lowercase   - transforma todo o texto em minúsculas
+    capitalize  - transforma cada primeira letra de cada palavra em maiúsculas
+*/
+h1 {
+    text-transform: uppercase;
+}
+
+h2 {
+    text-transform: capitalize;
+}
+
+button {
+    text-transform: lowercase;
+}
+
+/*
+    Text Indent
+    Identar (recuar) do texto da primeira linha de um parágrafo
+*/
+article p {
+    text-indent: 0.75em;
+}
+
+/*
+    Box Model
+
+    1) Todos os elementos de uma página são RETANGULARES 
+    2) Todos os elementos podem ter uma BORDA (LIMITE)
+    3) Existe em todos os elementos um espaço entre o seu conteúdo e essa BORDA (LIMITE) - PADDING
+    4) Existe em todos os elementos um espaço entre esse elemento e o ELEMENTO SEGUINTE - MARGIN
+*/
+
+/*
+    Width e Height
+
+    Nós podemos utilizar as propriedades width e height para mudar o tamanho da ÁREA DO CONTEÚDO:
+    - Os valores podem ser um comprimento, percentagem ou auto (o browser calcula as dimensões automaticamente)
+    - O valor por omissão é o auto
+*/
+section {
+    width: auto;
+    height: 50px;
+}
+
+/*
+    Box-sizing
+
+    Permite-nos mudar o comportamento o width e do height, utilizando a propriedade box-sizing:
+    - content-box: as propriedades width e height referem-se APENAS à area de conteúdo (valor por omissão)
+    - border-box: as propriedades width e height incluem na sua definição o padding e a border
+*/
+section {
+    box-sizing: border-box;
+    height: 50px;
+}
+
+/*
+    Minimum e Maximum
+
+    - Quando o width/height é calculado dependendo de alguma coisa (p.e. o tamanho do elemento-pai ou do seu próprio conteúdo),
+      podemos definir o valor máximo e mínimo para estas propriedades. Usando: min-width, max-width, min-height, max-height
+    - Os valores podem ser um comprimento, percentagem ou auto (o browser calcula as dimensões automaticamente)
+*/
+section {
+    /* 50% do tamanho do seu elemento-pai, no entanto indepentemente do tamanho do elemento-pai, o seu tamanho máximo é 40 em */
+    width: 50%;
+    max-width: 40em;
+
+    /* a altura do elemento é calculado automaticamente, mas não pode ter menos de 100px de altura */
+    height: auto;
+    min-height: 100px;
+}
+
+/*
+    Margin e Padding
+
+    - Podemos usar as propriedades margin e padding para alterar o valor destas no box-model
+    padding: 20px;
+    margin: 1em;
+
+    - Isto na realidade é um atalho para cada uma das suas quatro propriedades:
+        - padding-top, padding-right, padding-bottom, padding-left
+        - margin-top, margin-right, margin-bottom, margin-left
+    margin-left: 1em;
+    margin-right: 2em;
+    padding-top: 100px;
+
+    Os atalhos para a margin e o padding são os seguintes:
+    - Um valor: altera os quatro lados de uma só vez
+    - Dois valores: o primeiro valor é para o top/bottom e o segundo valor é para o left/right
+    - Três valores: o primeiro valor é para o top, o segundo valor é para o left/right e o terceiro valor é para o bottom
+    - Quatro valores: correspondem o top, right, bottom, left
+*/
+body {
+    margin: 0 auto; /* top e bottom 0px, left e right automatico */
+}
+
+.menu {
+    padding: 1em; /* padding de 1 em a toda a volta */
+}
+
+body > nav li {margin: 1.5em 1em 3em;} /* 1.5em top, 1em left/right e 3em bottom */
+
+/*
+    Borders (Bordas ou Limites)
+
+    Pode ser definida utilizando a propriedade border:
+    - Permite definir três aspectos da border - width, style, color
+    - O width pode ser uma medida, ou por descrição: thin, medium e o thick
+    - O style pode ter diferentes definições: none, hidden, dotted, dashed, solid, double, groove, ridge, inset, outset
+    - O color é uma côr
+
+    Cada propriedade da border (border-width, border-style e border-color) são também shorthands para cada um dos lados
+
+    Significa que o que temos na realidade é 12 (3 x 4) propriedades no total que se pode configurar
+*/
+#posts {
+    /*border: 1px solid blue;*/
+    border-width: 1px;
+    border-style: solid;
+    border-color: blue;
+}
+
+#posts article {
+    /* border: 5px dotted red;*/
+    border-width: 2px 4px 6px 8px;
+    border-style: solid dashed;
+    border-color: red green blue;
+}
+
+button {
+    /* border: 2px solid orange; */
+    border-left: 2px solid orange;
+}
+
+.menu {
+    /*border: 3px double green;*/
+    border-left-width: 3px;
+    border-top-style: double;
+    border-bottom-color: green;
+}
+
+/*
+    Border Radius
+
+    - A propriedade border-radius é usada para definir como arrendondamos cantos nos elementos HTML
+    - A curva de cada canto é definida usando um ou mais raios. Com isto conseguimos facilmente definir um círculo ou uma elipse
+    - Cada canto pode definir as seguintes propriedades:
+        - border-top-left-radius
+        - border-top-right-radius
+        - border-bottom-right-radius
+        - border-bottom-left-radius
+    - Os valores podem ser uma unidade ou uma percentagem
+    - Se dois raios forem utilizados, podem ser separados por / (definição de dois ou mais afetando horizontalmente e verticalmente)
+        permite controlar largura dos raios horizontais antes da barra e verticais depois da barra.
+
+    Shorthands
+    - Um valor:         Um raio único para todos os cantos do elemento
+    - Dois valores:     top-left-and-bottom-right e o top-right-and-bottom-left
+    - Três valores:     top-left, top-right-and-bottom-left e o bottom-right
+    - Quatro valores:   top-left, top-right, bottom-right, bottom-left
+*/
+#posts article {
+    border-radius: 15px;
+}
+
+button {
+    border-left: 2px solid orange;
+    border-radius: 999px;
+}
+
+.menu {
+    border-radius: 20px 10px 30px 40px;
+}
+
+.radius {
+    margin: 20px;
+    width: 50px; height: 50px;
+}
+
+#a {
+    background-color: blue;
+    border-radius: 10px;
+}
+
+#b {
+    background-color: red;
+    border-radius: 40px 10px;
+}
+
+#c {
+    background-color: green;
+    border-radius: 40px 10px / 20px 20px; /*Horizontalmente: 40px top-left/bottom-right, 10px top-right/bottom-left  | Verticalmente: 20px para todos*/
+}
+
+#d {
+    background-color: orange;
+    border-radius: 10% / 10% 20% 30% 40%;
+}
+
+#e {
+    background-color: gold;
+    border-radius: 10% 20% / 40px 10px;
+}
+
+#f {
+    background-color: fuchsia;
+    border-radius: 20px 0px;
+}
+
+/*
+    Background Image
+
+    - Além de podermos ter uma cor de fundo, os elementos HTML podem ter uma imagem com fundo, para isso usamos a propriedade
+      background-image
+    - Esta propriedade vai aceitar um URL como valor (o URL pode ser interno ou externo)
+*/
+.menu {
+    background-image: url("halloween-party.jpg");
+}
+
+/*
+    Background Position
+
+    - Vai definir a posição da image. E esta propriedade recebe dois valores:
+        - o primeiro valor pode ser: left, right, center ou uma medida
+        - o segundo valor pode ser: top, bottom, center ou uma medida
+*/
+.menu {
+    /*background-image: url("halloween-party.jpg");*/
+    background-image: url("bubbles.jpg");
+    background-position: bottom right;
+}
+
+/*
+    Background Attachment
+
+    - Utiliza a propriedade background-attachment para definir como a imagem de fundo do elemento HTML (background image) se comporta
+    em relação ao scroll da página
+
+    Três valores possíveis:
+    - scroll:   Valor por omissão. A imagem de fundo acompanha o scroll da página
+    - fixed:    A imagem de fundo fica fixa no ecrã (não se move com o conteúdo)
+    - local:    A imagem de fundo acompanha o scroll no elemento onde estiver como imagem de fundo (div com scroll)
+*/
+.menu {
+    /*background-image: url("halloween-party.jpg");*/
+    background-image: url("bubbles.jpg");
+    background-position: bottom right;
+    background-attachment: local;
+}
+
+/*
+    Background Repeat
+
+    - Também é possível definir se uma imagem de fundo se repete sobre um ou mais eixos utilizando a propriedade background-repeat
+    - Valores possíveis:
+        - no-repeat:    Previne a repetição de uma imagem de fundo
+        - repeat-x:     Efetua a repetição da imagem de fundo apenas no eixo do X
+        - repeat-y:     Efetua a repetição da imagem de fundo apenas no eixo do Y
+        - repeat:       Efetua a repetição da imagem de fundo em ambos os eixos (omissão)
+*/
+.menu {
+    /*background-image: url("halloween-party.jpg");*/
+    background-image: url("bubbles.jpg");
+    background-position: bottom right;
+    background-attachment: local;
+    background-repeat: no-repeat;
+}
+
+/*
+    Background Clip
+
+    - Por omissão, as propriedades do background (p.e. background-color e background-image) são aplicados no conteúdo do elemento, no padding
+       e na border
+    - Para mudar este comportamento, precisamos de usar a propriedade background-clip
+    - Valores possíveis:
+        - border-box (omissão)
+        - padding-box (só vai ser aplicado no conteúdo e no padding)
+        - content-box (só vai ser aplicado no contéudo
+*/
+.menu {
+    /*background-image: url("halloween-party.jpg");*/
+    background-image: url("bubbles.jpg");
+    background-position: bottom right;
+    background-attachment: local;
+    background-repeat: no-repeat;
+    background-clip: padding-box;
+}
+
+/*
+    Background Shorthands
+
+    - As propriedades passíveis de configuração são: background-color, background-position, background-size, background-repeat, 
+    background-origin, background-clip, background-attachment e background-image
+    - NÃO EXISTE PROBLEMA SE ESQUECEREM DE COLOCAR UMA DAS PROPRIEDADES!!
+*/
+.menu {
+    background: url("bubbles.jpg") lightgray no-repeat bottom right local padding-box;
+}
+
+/*
+    CSS Gradients
+
+    - Aprensenta transições suaves entre duas ou mais cores
+    - Existem 3 tipos de gradientes:
+        - Linear Gradients: baixo-cima-esquerdo-direito-diagonal
+        - Radial Gradients: definidos pelo seu centro
+        - Conic Gradients:  rodam à volta de um ponto central
+*/
+h1 {
+    background-image: linear-gradient(red, yellow);
+}
+
+h2 {
+    background-image: linear-gradient(to right, red, yellow);
+}
+
+h1 {
+    background-image: linear-gradient(red, yellow, green);
+}
+
+h2 {
+    background-image: linear-gradient(to bottom right, red, yellow);
+}
+
+h1 {
+    background-image: radial-gradient(red, yellow, green);
+}
+
+h2 {
+    background-image: radial-gradient(red 5%, yellow 15%, green 60%);
+}
+
+h2 {
+    background-image: repeating-radial-gradient(red 5%, yellow 15%, green 60%);
+}
+
+h1 {
+    background-image: conic-gradient(red, yellow, green);
+}
+
+h2 {
+    background-image: conic-gradient(red 45deg, yellow 90deg, green 210deg);
+}
+
+/*
+    Listas
+
+    - Nas listas de HTML, cada item da lista tem um marcador que define a sua posição
+    - Podemos alterar esses marcadores utilizando a propriedade list-style-type
+    - Valores possíveis:
+        - Listas desordenadas: none, disc (valor por omissão), circle, square
+        - Listas ordenadas:    none, decimal (valor por omissão), lower-alpha, lower-roman, upper-alpha e upper-roman
+*/
+.menu ul {
+    list-style-type: none;
+}
+
+aside ol {
+    list-style-type: lower-roman;
+}
+
+/*
+    Imagems como marcadores de listas
+
+    - Também é possível usar uma image como marcador de uma lista
+*/
+.menu ul {
+    list-style-image: url("diamond.gif");
+}
+
+/*
+    Tabelas
+
+    - Servem basicamente para dados/informação de forma tabular
+    - Por omissão a border de uma tabla está escondida
+    - Podemos usar a propriedade border (TAL E QUAL COMO VIMOS ANTERIORMENTE) para a definir
+*/
+table, th, td {
+    border: 1px solid red;
+}
+
+/*
+    Collapse Borders
+
+    - Existe, por omissão, um espaço entre as borders da tabela (e dos seus elementos) e das células adjacentes
+    - Para colapsar as borders numa border única, tem de se usar a propriedade border-collapse
+    - Tem dois valores:
+        - separate (valor por omissão)
+        - collapse criar uma border única
+*/
+table, th, td {
+    border: 1px solid red;
+    border-collapse: collapse;
+}

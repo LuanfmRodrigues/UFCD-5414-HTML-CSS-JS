@@ -1,0 +1,28 @@
+.item-favorito{
+    color: goldenrod;
+}
+
+#Ariano {
+    background-color: goldenrod;
+    font-family: cursive;
+    text-align: center;
+}
+
+pre {
+    font-size: 21px;
+    font-family: cursive;
+}
+pre > em{
+    font-style: italic;
+}
+a {
+
+
+    text-decoration: none;
+}
+
+img {
+    
+    border-radius: 12px;
+    color: goldenrod;
+}

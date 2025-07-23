@@ -1,0 +1,39 @@
+h2 {
+    color: blue;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
+} 
+.item-favorito {
+    color: goldenrod;
+    margin: 20px 20px;
+}
+pre {
+    font-family: monospace ;
+    font-style: italic;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    margin: 10px;
+    padding: 10px;
+    box-sizing: content-box;
+    
+}
+footer > a {
+    text-decoration: overline underline;
+    color: brown;
+}
+#filmes {
+    background-color: rgba(111, 94, 51, 0.184);
+}
+
+img {
+    border-radius: 10%;
+    border: 2px solid black;
+    
+}
+#Ariano {
+    background-color: aqua;
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    
+}
+

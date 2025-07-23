@@ -1,0 +1,31 @@
+header > h1 {
+    color: rgb(86, 235, 27);
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 19px;
+}
+ol {
+    background-color: aquamarine;
+}
+ol > li {
+
+    font-size: 12px;
+}
+.F {
+    font-style: italic;
+}
+
+#Objetivo {
+
+    background-color: goldenrod;
+}
+
+a {
+    text-decoration: none;
+}
+
+main > section , p {
+    text-decoration: underline;
+}

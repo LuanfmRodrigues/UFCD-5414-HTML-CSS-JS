@@ -1,0 +1,19 @@
+header, footer {
+    background-color: red;
+}
+
+main {
+    color: blue;
+}
+
+section {
+    color: lightsalmon;
+}
+
+article {
+    color: chartreuse;
+}
+
+main > aside {
+    font-family: cursive;
+}

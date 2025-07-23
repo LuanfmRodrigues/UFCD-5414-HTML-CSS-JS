@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/contato.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Contacte-nos</title>
+</head>
+<body>
+    <main>
+        <h1>💻 Contacte-nos </h1>
+        <form>
+            <fieldset>
+                <legend>Dados Pessoais</legend>
+
+                <label for="nome">👤 Nome: </label><br>
+                <input type="text" id="nome" name="nome" placeholder="Escreva seu nome" required autofocus> 
+                <br><br>
+                
+                <label for="empresa">🏢 Empresa: </label><br>
+                <input type="text" id="empresa" name="empresa">
+                <br><br>
+                
+                <label for="email">📧 E-mail: </label><br>
+                <input type="text" id="email" name="email" required>
+                <br><br>
+                
+                <label for="tel">☎️ Telefone: </label><br>
+                <input type="number" id="tel" name="Telefone" required>
+                <br><br>
+
+                <label for="text">❔ O que procura:</label><br>
+                <input name="procura" list="Procura" >
+                <datalist id="Procura">
+                    <option>Vendas</option>
+                    <option>Suporte</option>
+                    <option> Atenimento Geral</option>
+                </datalist><br><br>
+                
+                <label for="msg"> 📃 Mensagem:</label><br>
+                <textarea name="Mensagem" id="msg" rows="5" cols="80">
+                 
+                    
+                </textarea><br>
+                <input type="checkbox" id="permissão" name="permissão"><label for="permissão" class="auto">"Autorizo a Países do Mundo a guardar os meus dados pessoais com o intuito de responder ao meu pedido de contato"</label><br>
+                <br>
+                
+                <form action="dados.php" method="post" enctype="multipart/form-data">
+                    <button type="submit" class="botao">Enviar Mensagem</button>
+                </form><br><br>
+                <a href="paises.html"> &#x1F30E Voltar ao Menu</a>
+            </fieldset>
+        </form>
+    </main>
+    <footer>
+        <strong>UFCD 5414:</strong>   Atividade realizada por <a href="https://github.com/LuanfmRodrigues" target="_blank"><strong>Luan Rodrigues</strong>  </a>
+    </footer>
+</body>
+</html>
