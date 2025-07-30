@@ -1,0 +1,65 @@
+body { font-family: Arial, sans-serif; margin: 20px; }
+ 
+form {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    width: 400px;
+    margin-bottom: 20px;
+}
+ 
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+ 
+input[type="text"], input[type="email"], input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+ 
+.radio-group label, .checkbox-group label {
+    display: inline-block;
+    margin-right: 15px;
+    font-weight: normal;
+}
+ 
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+ 
+button[type="submit"]:hover {
+    background-color: #218838;
+}
+ 
+.mensagem-erro {
+    color: red;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+ 
+#resultadosInscricao {
+    border: 1px solid #007bff;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #e7f3ff;
+    border-radius: 8px;
+    width: 400px;
+    display: none;
+}
+ 
+#resultadosInscricao h3 { margin-top: 0; color: #007bff; }
+ 
+#resultadosInscricao p { margin: 5px 0; }

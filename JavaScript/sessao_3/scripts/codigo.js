@@ -107,4 +107,3 @@ let resultado6 = (function(){
 })();
 console.log(resultado6);
 
-// atividade feita

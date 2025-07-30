@@ -1,0 +1,49 @@
+body { font-family: Arial, sans-serif; margin: 20px; }
+ 
+#listaDeTarefas {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 15px;
+    list-style: none;
+    padding-left: 0;
+}
+ 
+#listaDeTarefas li {
+    background-color: #e9ecef;
+    margin-bottom: 8px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ 
+.botoes-acao {
+    display: flex;
+    gap: 5px;
+}
+ 
+button {
+    padding: 8px 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+ 
+#adicionarBtn { background-color: #007bff; color: white; }
+#adicionarBtn:hover { background-color: #0056b3; }
+ 
+.removerBtn { background-color: #dc3545; color: white; }
+.removerBtn:hover { background-color: #c82333; }
+ 
+.clonarBtn { background-color: #ffc107; color: #333; }
+.clonarBtn:hover { background-color: #e0a800; }
+ 
+input[type="text"] {
+    padding: 8px;
+    width: 250px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}

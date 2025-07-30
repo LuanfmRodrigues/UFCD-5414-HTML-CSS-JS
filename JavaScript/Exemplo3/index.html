@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link href="styles.css" rel="stylesheet">
+        <script src="scripts.js" defer></script>
+    </head>
+    <body>
+        <h1>Exemplo de Formulários com DOM</h1>
+ 
+        <h2>Formulário de Inscrição</h2>
+        <form id="formularioInscricao">
+            <div class="mensagem-erro" id="erroNome"></div>
+            <label for="nomeInscricao">Nome de Utilizador:</label>
+            <input type="text" id="nomeInscricao" name="nomeUtilizador">
+ 
+            <label for="emailInscricao">Email:</label>
+            <input type="email" id="emailInscricao" name="emailUtilizador">
+ 
+            <label for="passwordInscricao">Password:</label>
+            <input type="password" id="passwordInscricao" name="passwordUtilizador">
+ 
+            <label>Género:</label>
+            <div class="radio-group">
+                <input type="radio" id="generoM" name="genero" value="Masculino" checked>
+                <label for="generoM">Masculino</label>
+                <input type="radio" id="generoF" name="genero" value="Feminino">
+                <label for="generoF">Feminino</label>
+                <input type="radio" id="generoO" name="genero" value="Outro">
+                <label for="generoO">Outro</label>
+            </div>
+            <br>
+ 
+            <input type="checkbox" id="termosCheckbox">
+            <label for="termosCheckbox">Concordo com os termos e condições</label>
+            <div class="mensagem-erro" id="erroTermos"></div>
+            <br><br>
+ 
+            <button type="submit">Inscrever</button>
+        </form>
+ 
+        <div id="resultadosInscricao">
+            <h3>Dados da Inscrição:</h3>
+            <p>Nome de Utilizador: <span id="displayNomeUtilizador"></span></p>
+            <p>Email: <span id="displayEmailUtilizador"></span></p>
+            <p>Género: <span id="displayGeneroUtilizador"></span></p>
+            <p>Termos Aceites: <span id="displayTermosAceites"></span></p>
+        </div>
+    </body>
+</html>
